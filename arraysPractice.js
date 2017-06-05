@@ -5,7 +5,9 @@ var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item in the given array.
 
   //Code Here
-
+function first(arr){
+  return arr[0]
+};
 
 //Next problem
 
@@ -16,7 +18,9 @@ var arr = [40,50,60];
 
 
   //Code Here
-
+function last(arr){
+  return arr[arr.length - 1]
+};
 
 //Next Problem
 
@@ -25,7 +29,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
   //Code Here
-
+function looper(family){
+  family.forEach(function(element) {
+    alert(element)
+  });
+}
 
 //Next problem
 
@@ -35,7 +43,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 //Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
 
   //Code Here
-
+function reversedLooper(letters){
+  letters.reverse().forEach(function(element){
+    alert(element)
+  });
+}
 
 //Next Problem
 
@@ -45,6 +57,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
   //Code Here
 
+function evenFinder(nums){
+  for(var i = nums.length; i >= 0; i--) {
+    if(nums[i] % 2 !== 0){
+      nums.splice(i,1);
+    }
+  } return nums
+}
+  
+  
 
 //Next problem
 
@@ -56,7 +77,16 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 
   //Code Here
-
+function divider(numbersArray){
+  var dividerArray = [[], []];
+  for(var i = 0; i < numbersArray.length; i++){
+    if(numbersArray[i] % 2 === 0){
+      dividerArray[0].push(numbersArray[i]);
+    } else if(numbersArray[i] % 2 === 1){
+      dividerArray[1].push(numbersArray[i]);
+    }
+    } return dividerArray;
+  }
 
 //Next Problem
 
@@ -70,7 +100,15 @@ var getRandomArbitrary = function() {
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
-
+function finder(array) {
+  var num = getRandomArbitrary();
+  console.log(num);
+  for(var i = 0; i < array.length; i++){
+    if(array[i] === num){
+     return true;
+    }
+  } return false;
+}
   //Code Here
 
 
@@ -82,7 +120,9 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
-
+function reverse(str){
+  return str.split('').reverse().join('');
+}
 
 //Next Problem
 
@@ -104,6 +144,19 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+function removeItem(myGroceryList, item){
+  for(var i = myGroceryList.length; i >= 0; i--){
+    if(myGroceryList[i] === item){
+      myGroceryList.splice(i,1);
+    }
+  } return  myGroceryList;
+}
+
+function addItem(myGroceryList, item){
+  myGroceryList.push(item);
+  return myGroceryList;
+}
+
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -118,6 +171,12 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   //Code Here
 
+function maker(){
+  var array = [];
+  for(var i = 1; i <= 215; i++){
+    array.push(i);
+  } return array
+}
 
 
 //Next Problem
@@ -128,6 +187,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
+
+function addTen(numbers){
+  var plusTen = [];
+  for(var i = 0; i < numbers.length; i++){
+    plusTen.push(parseInt(numbers[i]) + 10);
+  } return plusTen;
+}
 
 
 
